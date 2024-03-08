@@ -1,0 +1,8 @@
+Laravel Schema - 
+
+Schema::table('your_table', function (Blueprint $table) {
+    $table->double('amount', 20, 2)->default(0)->change();
+});
+
+
+SQL Command - ALTER TABLE `your_table` MODIFY COLUMN `amount` DOUBLE(20, 2) NOT NULL DEFAULT 0;
