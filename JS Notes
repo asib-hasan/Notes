@@ -1,0 +1,5 @@
+Formatted Date Value JS::::::::::::::::
+
+var today = new Date();
+var formattedDate = today.toISOString().substr(0, 10);
+document.getElementById("today").value = formattedDate;
