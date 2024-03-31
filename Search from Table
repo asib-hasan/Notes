@@ -1,0 +1,22 @@
+Search from table:::
+
+<input class="form-control print-none rounded-0" type="text" id="searchInput" placeholder="Type anything to search">
+
+Note:::Table id = "dataTable"
+
+$('#searchInput').on('input', function () {
+                var searchTerm = $(this).val().toLowerCase();
+                filterTable(searchTerm);
+        });
+        function filterTable(searchTerm) {
+            $('#dataTable tbody tr').each(function () {
+                var rowText = $(this).text().toLowerCase();
+
+                // Check if the row contains the search term
+                if (rowText.includes(searchTerm)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        }
