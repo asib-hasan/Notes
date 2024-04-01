@@ -1,0 +1,8 @@
+try {
+            $dataEX['exam_name'] = ExamModel::findOrFail($exam_id)->name;
+            $dataEX['session_name'] = GlobalModel::findOrFail($session_id)->name;
+            $dataEX['subject_name'] = SubjectModel::findOrFail($subject_id)->name;
+            $dataEX['class_name'] = ClassModel::findOrFail($class_id)->name;
+        } catch (\Exception $e) {
+            abort(500);
+        }
