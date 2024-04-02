@@ -1,0 +1,5 @@
+Apply foreign key SQL::
+
+ALTER TABLE marks
+ADD CONSTRAINT fk_exam_id
+FOREIGN KEY (exam_id) REFERENCES exam(id);
