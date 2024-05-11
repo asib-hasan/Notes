@@ -1,5 +1,5 @@
 Apply foreign key SQL::
 
-ALTER TABLE marks
-ADD CONSTRAINT fk_exam_id
-FOREIGN KEY (exam_id) REFERENCES exam(id);
+ALTER TABLE table_name
+ADD CONSTRAINT fk_name_id
+FOREIGN KEY (foreign_id) REFERENCES table_name(id);
