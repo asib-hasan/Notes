@@ -1,0 +1,30 @@
+$(document).ready(function(){
+        $('#select-category').on('change',function(){
+            var category_id = $(this).val();
+            if(category_id){
+                var url = "{{ URL::to('invmgt/product/subcategory') }}?id=" + category_id;
+                $.ajax({
+                    url :url,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        if(data.length>0){
+                            $('#select-subcategory').empty();
+                            $('#select-subcategory').append('<option value="">-- Select --</option>');
+                            $.each(data, function(key, value) {
+                                $('#select-subcategory').append('<option value="' + value.id + '">' + value.name + '</option>');
+                            });
+                        }
+                        else{
+                            $('#select-subcategory').empty();
+                            $('#select-subcategory').append('<option value="">-- Select --</option>');
+                        }
+                    }
+                });
+            }
+            else{
+                $('#select-subcategory').empty();
+                $('#select-subcategory').append('<option value="">-- Select --</option>');
+            }
+        });
+    });
